@@ -75,7 +75,6 @@ public class MovementStateManager : NetworkBehaviour
     #region CameraParameters
 
     private Transform cameraTransform;
-    private Camera playerCamera;
 
     #endregion
 
@@ -85,9 +84,9 @@ public class MovementStateManager : NetworkBehaviour
 
         if (base.IsOwner)
         {
-            playerCamera = Camera.main; 
-            playerCamera.transform.SetParent(transform);
-            cameraTransform = playerCamera.transform;
+            Camera c = Camera.main;
+            c.transform.SetParent(transform);
+            cameraTransform = c.transform;
         }
         else
         {

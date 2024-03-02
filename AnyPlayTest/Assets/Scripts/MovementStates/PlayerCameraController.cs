@@ -29,10 +29,17 @@ public class PlayerCameraController : NetworkBehaviour
         base.OnStartClient();
         if (base.IsOwner)
         {
+            idleCam = GetComponent<CinemachineVirtualCamera>();
+            crouchCam = GetComponent<CinemachineVirtualCamera>();
+            proneCam = GetComponent<CinemachineVirtualCamera>();
+
         }
         else
         {
             GetComponent<PlayerCameraController>().enabled = false;
+            idleCam.GetComponent<CinemachineVirtualCamera>().enabled = false;
+            crouchCam.GetComponent<CinemachineVirtualCamera>().enabled = false;
+            proneCam.GetComponent<CinemachineVirtualCamera>().enabled = false;
         }
     }
     private void Awake()
