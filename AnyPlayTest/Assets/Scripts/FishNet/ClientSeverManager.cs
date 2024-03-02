@@ -48,7 +48,7 @@ public class ClientSeverManager : MonoBehaviour
 
         // For non-Unity Editor builds, start client connection
 #if !UNITY_EDITOR
-        _tugboat.StartConnection(true);
+        _tugboat.StartConnection(false);
 #endif
     }
 
