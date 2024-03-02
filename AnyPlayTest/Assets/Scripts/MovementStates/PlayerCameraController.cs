@@ -29,9 +29,6 @@ public class PlayerCameraController : NetworkBehaviour
         base.OnStartClient();
         if (base.IsOwner)
         {
-            idleCam = GetComponent<CinemachineVirtualCamera>();
-            crouchCam = GetComponent<CinemachineVirtualCamera>();
-            proneCam = GetComponent<CinemachineVirtualCamera>();
 
         }
         else
